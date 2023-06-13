@@ -53,7 +53,7 @@ public class RojelioIA : MonoBehaviour
                 if (_arraynumber >= _waypoints.Length -1)
                 {
                     print("paso el array");
-                    _arraynumber = 0;
+                    _arraynumber = -1;
                 }
             }
             // en caso de que el jugador no este en su rango, el enemigo patrulla a una velocidad x
