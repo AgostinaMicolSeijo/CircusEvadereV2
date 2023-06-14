@@ -7,6 +7,16 @@ TagManager:
   - Puerta
   - Llave1
   - AgarrarFarol
+  - engranajeUno
+  - engranajeDos
+  - engranajeTres
+  - Detector
+  - boton
+  - boton2
+  - boton3
+  - puerta
+  - puertaAbrir
+  - puertaCerrar
   layers:
   - Default
   - TransparentFX
@@ -19,7 +29,7 @@ TagManager:
   - 
   - 
   - GroundMask
-  - 
+  - AgarrarFarol
   - 
   - 
   - 

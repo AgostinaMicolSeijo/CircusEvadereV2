@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuInicio.unity
+    guid: 9c5d984daa9f09048971f89941e7feac
+  - enabled: 1
+    path: Assets/Scenes/CarabanasMalditas.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
