@@ -3,20 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Puerta
-  - Llave1
-  - AgarrarFarol
-  - engranajeUno
-  - engranajeDos
-  - engranajeTres
-  - Detector
-  - boton
-  - boton2
-  - boton3
-  - puerta
-  - puertaAbrir
-  - puertaCerrar
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -29,7 +16,7 @@ TagManager:
   - 
   - 
   - GroundMask
-  - AgarrarFarol
+  - 
   - 
   - 
   - 
