@@ -7,7 +7,7 @@ public class EscapeJaula : MonoBehaviour
     //Llaves
     [SerializeField] GameObject llaveMano;
     [SerializeField] GameObject llaveAgarrar;
-    [SerializeField] GameObject llavePuerta;
+    //[SerializeField] GameObject llavePuerta;
 
     [SerializeField] Camera camara;
     [SerializeField] float camaraDistancia = 5;
@@ -33,7 +33,7 @@ public class EscapeJaula : MonoBehaviour
     {
         llaveMano.SetActive(false);
         llaveAgarrar.SetActive(true);
-        llavePuerta.SetActive(false);
+        //llavePuerta.SetActive(false);
         textoPuerta.SetActive(false);
     }
 
@@ -72,7 +72,7 @@ public class EscapeJaula : MonoBehaviour
                             puertaCerrada.SetActive(false);
                             llaveMano.SetActive(false);
                             puertaAbierta.SetActive(true);
-                            llavePuerta.SetActive(true);
+                            //llavePuerta.SetActive(true);
                             banderaDesactivar = false;
                             //textoPuerta.SetActive(false);
                         }
