@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Llave1
   - Puerta
+  - engranajeUno
+  - engranajeDos
+  - engranajeTres
+  - Detector
+  - boton
+  - boton2
+  - boton3
   layers:
   - Default
   - TransparentFX
