@@ -13,6 +13,11 @@ TagManager:
   - boton
   - boton2
   - boton3
+  - CajaMusical
+  - bateriaUno
+  - bateriaDos
+  - bateriaTres
+  - Carta
   layers:
   - Default
   - TransparentFX

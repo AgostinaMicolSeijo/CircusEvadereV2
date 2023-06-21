@@ -13,10 +13,10 @@ public class Farol : MonoBehaviour
     [SerializeField] float camaraDistancia = 5f;
     bool banderaFarol;
 
-    public GameObject texto;
+    //public GameObject texto;
     void Start()
     {
-        texto.SetActive(false);
+        //texto.SetActive(false);
 
         luzFarol.SetActive(true);
 
@@ -34,16 +34,16 @@ public class Farol : MonoBehaviour
                 Destroy(farolAgarrar);
                 farolMano.SetActive(true);
                 farol = farol++;
-                texto.SetActive(true);
+                //texto.SetActive(true);
             }
         }
         if (Physics.Raycast(camara.transform.position, camara.transform.forward, out hit, camaraDistancia, LayerMask.GetMask("AgarrarFarol")))
         {
-            texto.SetActive(true);
+            //texto.SetActive(true);
         }
         else
         {
-            texto.SetActive(false);
+            //texto.SetActive(false);
         }
 
         if (farol >= 0)

@@ -12,11 +12,11 @@ public class EscapeJaula : MonoBehaviour
     [SerializeField] Camera camara;
     [SerializeField] float camaraDistancia = 5;
 
-    [SerializeField] GameObject textoLlave;
+    //[SerializeField] GameObject textoLlave;
     //Puertas
     [SerializeField] GameObject puertaCerrada;
     [SerializeField] GameObject puertaAbierta;
-    [SerializeField] GameObject textoPuerta;
+   // [SerializeField] GameObject textoPuerta;
 
     bool banderaPuerta;
     bool banderaDesactivar;
@@ -34,7 +34,7 @@ public class EscapeJaula : MonoBehaviour
         llaveMano.SetActive(false);
         llaveAgarrar.SetActive(true);
         //llavePuerta.SetActive(false);
-        textoPuerta.SetActive(false);
+        //textoPuerta.SetActive(false);
     }
 
 
@@ -45,7 +45,7 @@ public class EscapeJaula : MonoBehaviour
         {
             if (hit.transform.CompareTag("Llave1"))
             {
-                textoLlave.SetActive(true);
+               // textoLlave.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     sonidoLlaves.Play();
@@ -57,7 +57,7 @@ public class EscapeJaula : MonoBehaviour
             }
             else
             {
-               textoLlave.SetActive(false);
+               //textoLlave.SetActive(false);
             }
             if (banderaDesactivar == true)
             {

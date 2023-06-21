@@ -11,8 +11,8 @@ public class CajaMusical : MonoBehaviour
 
     //Palancas con animaciones
     [SerializeField] GameObject palancaUno;
-    [SerializeField] GameObject palancaDos;
-    [SerializeField] GameObject palancaTres;
+    //[SerializeField] GameObject palancaDos;
+    //[SerializeField] GameObject palancaTres;
 
     //Baterias de la caja
     [SerializeField] GameObject bateriaUno;
@@ -25,11 +25,11 @@ public class CajaMusical : MonoBehaviour
     [SerializeField] GameObject bateriaoleccionableTres;
 
     // Se abre la caja musical
-    [SerializeField] GameObject tapaCajaMusical;
-    [SerializeField] GameObject tapaCajaMusicalCerrada;
+    //[SerializeField] GameObject tapaCajaMusical;
+    //[SerializeField] GameObject tapaCajaMusicalCerrada;
 
     // LLave
-    [SerializeField] GameObject llave;
+    //[SerializeField] GameObject llave;
 
     // contador de baterias
     int contadorBaterias = 0;
@@ -40,7 +40,7 @@ public class CajaMusical : MonoBehaviour
     int bateriaPuestaTres = 0;
 
     // Textos "press e"
-    [SerializeField] GameObject textoBateriaUno;
+   /* [SerializeField] GameObject textoBateriaUno;
     [SerializeField] GameObject textoBateriaDos;
     [SerializeField] GameObject textoBateriaTres;
 
@@ -48,42 +48,71 @@ public class CajaMusical : MonoBehaviour
     [SerializeField] GameObject textoCajaMusicalDos;
     [SerializeField] GameObject textoCajaMusicalTres;
 
-    [SerializeField] GameObject textoPalancaUno;
-    [SerializeField] GameObject textoPalancaDos;
+    [SerializeField] GameObject textoPalancaUno;*/
+    //[SerializeField] GameObject textoPalancaDos;
 
-    [SerializeField] GameObject textoLlave;
+    //[SerializeField] GameObject textoLlave;
 
     //llave
-    [SerializeField] GameObject llaveCajaMusical;
+    //[SerializeField] GameObject llaveCajaMusical;
 
+    //carteles y puertas
+    [SerializeField] GameObject rejapuertapuzzleUno;
+    [SerializeField] GameObject rejapuertapuzzleDos;
+
+    [SerializeField] GameObject rejapuertapuzzleUnoAnimada;
+    [SerializeField] GameObject rejapuertapuzzleDosAnimada;
+
+    [SerializeField] GameObject cartelUno;
+    [SerializeField] GameObject cartelDos;
+
+    [SerializeField] GameObject cartelUnoAnimado;
+    [SerializeField] GameObject cartelDosAnimado;
+
+    //cancion
+    [SerializeField] AudioSource sonidoCajaMusical;
     void Start()
     {
-        textoBateriaUno.SetActive(false);
+        /*textoBateriaUno.SetActive(false);
         textoBateriaDos.SetActive(false);
         textoBateriaTres.SetActive(false);
 
         textoCajaMusicalUno.SetActive(false);
         textoCajaMusicalDos.SetActive(false);
-        textoCajaMusicalTres.SetActive(false);
-        textoLlave.SetActive(false);
+        textoCajaMusicalTres.SetActive(false);*/
+        //textoLlave.SetActive(false);
 
-        textoPalancaUno.SetActive(false);
-        textoPalancaDos.SetActive(false);
+        //textoPalancaUno.SetActive(false);
+        //textoPalancaDos.SetActive(false);
 
         palanca.SetActive(true);
 
         palancaUno.SetActive(false);
-        palancaDos.SetActive(false);
-        palancaTres.SetActive(false);
+        //palancaDos.SetActive(false);
+        //palancaTres.SetActive(false);
 
         bateriaUno.SetActive(false);
         bateriaDos.SetActive(false);
         bateriaTres.SetActive(false);
 
-        tapaCajaMusical.SetActive(false);
-        tapaCajaMusicalCerrada.SetActive(true);
+        //tapaCajaMusical.SetActive(false);
+        //tapaCajaMusicalCerrada.SetActive(true);
 
-        llave.SetActive(false);
+        //llave.SetActive(false);
+
+        //cartelesy puertas
+        rejapuertapuzzleUnoAnimada.SetActive(false);
+        rejapuertapuzzleDosAnimada.SetActive(false);
+
+        rejapuertapuzzleUno.SetActive(true);
+        rejapuertapuzzleDos.SetActive(true);
+        
+        cartelUno.SetActive(true);
+        cartelDos.SetActive(true);
+
+        cartelUnoAnimado.SetActive(false);
+        cartelDosAnimado.SetActive(false);
+
     }
 
     void Update()
@@ -96,7 +125,7 @@ public class CajaMusical : MonoBehaviour
             //Agarrar Baterias
             if (hit.transform.CompareTag("bateriaUno"))
             {
-                textoBateriaUno.SetActive(true);
+               // textoBateriaUno.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -109,34 +138,34 @@ public class CajaMusical : MonoBehaviour
 
             if (hit.transform.CompareTag("bateriaDos"))
             {
-                textoBateriaDos.SetActive(true);
+               // textoBateriaDos.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     bateriaColeccionableDos.SetActive(false);
                     bateriaPuestaDos = bateriaPuestaDos + 1;
 
-                    textoBateriaDos.SetActive(false);
+                    //textoBateriaDos.SetActive(false);
                 }
             }
 
             if (hit.transform.CompareTag("bateriaTres"))
             {
-                textoBateriaTres.SetActive(true);
+                //textoBateriaTres.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     bateriaoleccionableTres.SetActive(false);
                     bateriaPuestaTres = bateriaPuestaTres + 1;
 
-                    textoBateriaTres.SetActive(false);
+                   // textoBateriaTres.SetActive(false);
                 }
             }
 
             //Poner Baterias en la Caja
             if (hit.transform.CompareTag("CajaMusical") && bateriaPuestaUno >= 1)
             {
-                textoCajaMusicalUno.SetActive(true);
+                //textoCajaMusicalUno.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -144,13 +173,13 @@ public class CajaMusical : MonoBehaviour
                     contadorBaterias = contadorBaterias + 1;
                     bateriaPuestaUno = 0;
 
-                    textoCajaMusicalUno.SetActive(false);
+                    //textoCajaMusicalUno.SetActive(false);
                 }
             }
 
             if (hit.transform.CompareTag("CajaMusical") && bateriaPuestaDos >= 1)
             {
-                textoCajaMusicalDos.SetActive(true);
+               // textoCajaMusicalDos.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -158,13 +187,13 @@ public class CajaMusical : MonoBehaviour
                     contadorBaterias = contadorBaterias + 1;
                     bateriaPuestaDos = 0;
 
-                    textoCajaMusicalDos.SetActive(false);
+                    //textoCajaMusicalDos.SetActive(false);
                 }
             }
 
             if (hit.transform.CompareTag("CajaMusical") && bateriaPuestaTres >= 1)
             {
-                textoCajaMusicalTres.SetActive(true);
+               // textoCajaMusicalTres.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -172,7 +201,7 @@ public class CajaMusical : MonoBehaviour
                     contadorBaterias = contadorBaterias + 1;
                     bateriaPuestaTres = 0;
 
-                    textoCajaMusicalTres.SetActive(false);
+                   // textoCajaMusicalTres.SetActive(false);
                 }
             }
 
@@ -182,53 +211,42 @@ public class CajaMusical : MonoBehaviour
                 palancaUno.SetActive(true);
 
                 contadorBaterias = 0;
+
+                rejapuertapuzzleUnoAnimada.SetActive(false);
+                rejapuertapuzzleDosAnimada.SetActive(false);
+
+                rejapuertapuzzleUno.SetActive(true);
+                rejapuertapuzzleDos.SetActive(true);
+
+                cartelUno.SetActive(true);
+                cartelDos.SetActive(true);
+
+                cartelUnoAnimado.SetActive(false);
+                cartelDosAnimado.SetActive(false);
+
+                sonidoCajaMusical.Play();
+
+                //tapaCajaMusical.SetActive(true);
+                //tapaCajaMusicalCerrada.SetActive(false);
+
+                //llave.SetActive(true);
+
+                //textoPalancaDos.SetActive(false);
             }
 
-            //Palancas
-            if (hit.transform.CompareTag("palancaUnoA"))
-            {
-                textoPalancaUno.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    palancaUno.SetActive(false);
-                    palancaDos.SetActive(true);
-
-                    textoPalancaUno.SetActive(false);
-                }
-            }
-
-            if (hit.transform.CompareTag("palancaDosA"))
-            {
-                textoPalancaDos.SetActive(true);
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    palancaDos.SetActive(false);
-                    palancaTres.SetActive(true);
-
-                    tapaCajaMusical.SetActive(true);
-                    tapaCajaMusicalCerrada.SetActive(false);
-
-                    llave.SetActive(true);
-
-                    textoPalancaDos.SetActive(false);
-                }
-            }
-
-            if (hit.transform.CompareTag("llaveCaja"))
+            /*if (hit.transform.CompareTag("llaveCaja"))
             {
                 textoLlave.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     textoLlave.SetActive(false);
                 }
-            }
+            }*/
         }
 
-        else
+       /* else
         {
-            textoBateriaUno.SetActive(false);
-        }
+            //textoBateriaUno.SetActive(false);
+        }*/
     }
 }

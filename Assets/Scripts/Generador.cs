@@ -17,7 +17,7 @@ public class Generador : MonoBehaviour
 
     [SerializeField] GameObject luzCirco;
 
-    [SerializeField] GameObject textoEngranaje;
+    //[SerializeField] GameObject textoEngranaje;
 
     int falsoUno = 0;
     int falsoDos = 0;
@@ -73,6 +73,7 @@ public class Generador : MonoBehaviour
 
     [SerializeField] AudioSource botones;
     [SerializeField] AudioSource generador;
+    [SerializeField] AudioSource reja;
 
     private void Awake()
     {
@@ -104,7 +105,7 @@ public class Generador : MonoBehaviour
         engranajeTresGenerador.SetActive(false);
 
 
-        textoEngranaje.SetActive(false);
+        //textoEngranaje.SetActive(false);
 
         //botones
         rojoUno.SetActive(false);
@@ -138,7 +139,7 @@ public class Generador : MonoBehaviour
             //agarrar engranajes
             if (hit.transform.CompareTag("engranajeUno"))
             {
-                textoEngranaje.SetActive(true);
+               // textoEngranaje.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -149,12 +150,12 @@ public class Generador : MonoBehaviour
                     engranajeUnoGenerador.SetActive(true);
                     */
 
-                    textoEngranaje.SetActive(false);
+                    //textoEngranaje.SetActive(false);
                 }
             }
             if (hit.transform.CompareTag("engranajeDos"))
             {
-                textoEngranaje.SetActive(true);
+                //textoEngranaje.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -165,13 +166,13 @@ public class Generador : MonoBehaviour
                     engranajeDosGenerador.SetActive(true);
                     */
 
-                    textoEngranaje.SetActive(false);
+                   // textoEngranaje.SetActive(false);
                 }
 
             }
             if (hit.transform.CompareTag("engranajeTres"))
             {
-                textoEngranaje.SetActive(true);
+                //textoEngranaje.SetActive(true);
                 falsoTres = falsoTres + 1;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -181,64 +182,64 @@ public class Generador : MonoBehaviour
                     engranajeTresGenerador.SetActive(true);
                     */
 
-                    textoEngranaje.SetActive(false);
+                   // textoEngranaje.SetActive(false);
                 }
             }
 
             //Poner engranajes
             if (hit.transform.CompareTag("Detector") && falsoUno >= 1)
             {
-                textoEngranaje.SetActive(true);
+                //textoEngranaje.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     engranajeUnoGenerador.SetActive(true);
                     contadorEngranajes = contadorEngranajes + 1;
 
-                    textoEngranaje.SetActive(false);
+                    //textoEngranaje.SetActive(false);
                 }
             }
 
             if (hit.transform.CompareTag("Detector") && falsoUno < 1)
             {
-                textoEngranaje.SetActive(false);
+                //textoEngranaje.SetActive(false);
             }
 
             if (hit.transform.CompareTag("Detector") && falsoDos >= 1)
             {
-                textoEngranaje.SetActive(true);
+                //textoEngranaje.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     engranajeDosGenerador.SetActive(true);
                     contadorEngranajes = contadorEngranajes + 1;
 
-                    textoEngranaje.SetActive(false);
+                   // textoEngranaje.SetActive(false);
                 }
             }
 
             if (hit.transform.CompareTag("Detector") && falsoDos < 1)
             {
-                textoEngranaje.SetActive(false);
+                //textoEngranaje.SetActive(false);
             }
 
             if (hit.transform.CompareTag("Detector") && falsoTres >= 1)
             {
                 print("Mira el generador");
-                textoEngranaje.SetActive(true);
+                //textoEngranaje.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     engranajeTresGenerador.SetActive(true);
                     contadorEngranajes = contadorEngranajes + 1;
 
-                    textoEngranaje.SetActive(false);
+                    //textoEngranaje.SetActive(false);
                 }
             }
 
             if (hit.transform.CompareTag("Detector") && falsoTres < 1)
             {
-                textoEngranaje.SetActive(false);
+                //textoEngranaje.SetActive(false);
             }
 
             if(contadorEngranajes >= 3)
@@ -248,7 +249,7 @@ public class Generador : MonoBehaviour
             }
             if(hit.transform.CompareTag("boton") && banderaBoton == true)
             {
-                textoEngranaje.SetActive(true);
+                //textoEngranaje.SetActive(true);
                 print("Mira boton");
                 //primer boton
 
@@ -298,7 +299,7 @@ public class Generador : MonoBehaviour
             if (hit.transform.CompareTag("boton2") && banderaBotonDos == true)
             {
                 //segundo boton
-                textoEngranaje.SetActive(true);
+                //textoEngranaje.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -354,7 +355,7 @@ public class Generador : MonoBehaviour
             if (hit.transform.CompareTag("boton3") && banderaBotonTres == true)
             {
                 //tercer Boton
-                textoEngranaje.SetActive(true);
+                //textoEngranaje.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -411,15 +412,18 @@ public class Generador : MonoBehaviour
         //abrir puertas
         if (contadorRojo >= 3 || contadorAmarillo >= 3 || contadorVerde >= 3)
         {
+            generador.Stop();
+            reja.Play();
             puerta.SetActive(false);
             puertaAbrir.SetActive(true);
         }
 
+        /*
         else
         {
             
-            textoEngranaje.SetActive(false);
+            //textoEngranaje.SetActive(false);
         }
-        
+        */
     }
 }

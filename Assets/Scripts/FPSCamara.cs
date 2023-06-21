@@ -10,7 +10,10 @@ public class FPSCamara : MonoBehaviour
 
     //Slider
 
-
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void Start()
     {
         camara = transform.Find("Camera");
