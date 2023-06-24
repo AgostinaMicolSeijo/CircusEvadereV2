@@ -18,6 +18,9 @@ public class MovimientoJugador : MonoBehaviour
     public float distanciaPiso = 0.3f;
     public LayerMask groundMask;
 
+   // [SerializeField] GameObject pepeCamina;
+   // [SerializeField] GameObject pepeCorre;
+
     Vector3 rapidez;
 
     bool estamosEnPasto;
@@ -31,6 +34,11 @@ public class MovimientoJugador : MonoBehaviour
     void Start()
     {
         //movimiento.SetActive(false);
+
+        /*
+        pepeCamina.SetActive(false);
+        pepeCorre.SetActive(false);
+        */
     }
 
     void Update()
@@ -51,6 +59,7 @@ public class MovimientoJugador : MonoBehaviour
         {
             move.Normalize();
         }
+
         controler.Move(move * velocidad * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.LeftShift) && estaCorriendo == false)
@@ -59,15 +68,20 @@ public class MovimientoJugador : MonoBehaviour
             //movimiento.SetActive(true);
             duracion = duracion + Time.deltaTime;
 
-            if(duracion >= 4)
+
+            if (duracion >= 4)
             {
                 tiempoEspera = 4.5f;
                 //print("tiempo de espera" + tiempoEspera);
                 //movimiento.SetActive(false);
                 estaCorriendo = true;
                 Clip.Play();
+
             }
+            //
+
         }
+
         /*else
         { cambio de mecanica
             duracion = 0f;
