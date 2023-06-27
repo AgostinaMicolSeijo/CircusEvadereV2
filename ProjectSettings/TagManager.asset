@@ -18,6 +18,7 @@ TagManager:
   - bateriaDos
   - bateriaTres
   - Carta
+  - audio
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Post Procesing
   - 
   - GroundMask
   - AgarrarFarol
