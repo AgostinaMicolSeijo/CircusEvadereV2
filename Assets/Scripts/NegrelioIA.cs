@@ -17,6 +17,7 @@ public class NegrelioIA : MonoBehaviour
     [SerializeField] private GameObject _bolacorrer;
     [SerializeField] private GameObject _bolacaminar;
     [SerializeField] private float _radioescuchar;
+    [SerializeField] private float _radiusCerca;
 
     //array
     [SerializeField] private Transform[] _waypoints;
@@ -48,9 +49,11 @@ public class NegrelioIA : MonoBehaviour
             _agent.speed = _velocitynormal;
         }
 
-        if (Vector3.Distance(transform.position, _target.position) <= _rangoactual && ( _bolacorrer.activeInHierarchy || _bolacaminar.activeInHierarchy) )
-        {
-            _agent.SetDestination(_target.position);
+        if (Vector3.Distance(transform.position, _target.position) <= _rangoactual &&
+            ( _bolacorrer.activeInHierarchy || _bolacaminar.activeInHierarchy) 
+            || Vector3.Distance(transform.position, _target.position) <= _radiusCerca)
+        {        
+              _agent.SetDestination(_target.position);
         }
         else
         {
@@ -75,6 +78,8 @@ public class NegrelioIA : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _rangoactual);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, _radioescuchar);
+        Gizmos.color = Color.grey;
+        Gizmos.DrawWireSphere(transform.position, _radiusCerca);
 
     }
 }
