@@ -18,8 +18,8 @@ public class MovimientoJugador : MonoBehaviour
     public float distanciaPiso = 0.3f;
     public LayerMask groundMask;
 
-   // [SerializeField] GameObject pepeCamina;
-   // [SerializeField] GameObject pepeCorre;
+   [SerializeField] GameObject pepeCamina;
+   [SerializeField] GameObject pepeCorre;
 
     Vector3 rapidez;
 
@@ -30,15 +30,9 @@ public class MovimientoJugador : MonoBehaviour
 
     public AudioSource Clip;
 
-    //[SerializeField] Animation movimiento;
     void Start()
     {
-        //movimiento.SetActive(false);
 
-        /*
-        pepeCamina.SetActive(false);
-        pepeCorre.SetActive(false);
-        */
     }
 
     void Update()
@@ -62,10 +56,12 @@ public class MovimientoJugador : MonoBehaviour
 
         controler.Move(move * velocidad * Time.deltaTime);
 
+
+
         if (Input.GetKey(KeyCode.LeftShift) && estaCorriendo == false)
         {
             controler.Move(move * correr * Time.deltaTime);
-            //movimiento.SetActive(true);
+
             duracion = duracion + Time.deltaTime;
 
 
@@ -73,27 +69,21 @@ public class MovimientoJugador : MonoBehaviour
             {
                 tiempoEspera = 4.5f;
                 //print("tiempo de espera" + tiempoEspera);
-                //movimiento.SetActive(false);
+
                 estaCorriendo = true;
                 Clip.Play();
 
             }
-            //
-
         }
 
-        /*else
-        { cambio de mecanica
-            duracion = 0f;
-        }*/
+
         if (estaCorriendo == true)
         {
             tiempoEspera = tiempoEspera - Time.deltaTime;
             //print("resta" + tiempoEspera);
-            //movimiento.SetActive(false);
             if(tiempoEspera <= 0f)
             {
-                //movimiento.SetActive(true);
+    
                 estaCorriendo = false;
                 duracion = 0f;
             }
@@ -108,10 +98,5 @@ public class MovimientoJugador : MonoBehaviour
 
         controler.Move(rapidez*Time.deltaTime);
 
-        /*
-        if(Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            //movimiento.SetActive(false);
-        }*/
     }
 }
