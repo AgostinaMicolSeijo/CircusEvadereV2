@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    private void Update()
+    {
 
+    }
     public void Jugar()
     {
         SceneManager.LoadScene("CarabanasMalditas");
@@ -14,11 +17,6 @@ public class Menu : MonoBehaviour
     public void Salir()
     {
         Application.Quit();
+        print("Salir");
     }
-
-    //public void VolverMenu()
-    /*{
-        SceneManager.LoadScene("MenuPrincipal");
-    }*/
-
 }
