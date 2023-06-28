@@ -18,11 +18,11 @@ public class MovimientoJugador : MonoBehaviour
     public float distanciaPiso = 0.3f;
     public LayerMask groundMask;
 
-   [SerializeField] GameObject pepeCamina;
-   [SerializeField] GameObject pepeCorre;
+    [SerializeField] GameObject pepeCamina;
+    [SerializeField] GameObject pepeCorre;
 
-    bool banderaCaminar= false;
-    bool banderaCorrer= false;
+    bool banderaCaminar = false;
+    bool banderaCorrer = false;
 
     Vector3 rapidez;
 
@@ -33,11 +33,14 @@ public class MovimientoJugador : MonoBehaviour
 
     public AudioSource Clip;
 
+    // Start is called before the first frame update
     void Start()
     {
 
+
     }
 
+    // Update is called once per frame
     void Update()
     {
 
@@ -56,9 +59,9 @@ public class MovimientoJugador : MonoBehaviour
         {
             move.Normalize();
         }
-       
+
         controler.Move(move * velocidad * Time.deltaTime);
-        if(x!=0 || z!=0)
+        if (x != 0 || z != 0)
         {
             banderaCaminar = true;
         }
@@ -94,9 +97,9 @@ public class MovimientoJugador : MonoBehaviour
         {
             tiempoEspera = tiempoEspera - Time.deltaTime;
             //print("resta" + tiempoEspera);
-            if(tiempoEspera <= 0f)
+            if (tiempoEspera <= 0f)
             {
-    
+
                 estaCorriendo = false;
                 duracion = 0f;
             }
@@ -109,7 +112,7 @@ public class MovimientoJugador : MonoBehaviour
 
         rapidez.y += gravedad * Time.deltaTime;
 
-        controler.Move(rapidez*Time.deltaTime);
+        controler.Move(rapidez * Time.deltaTime);
 
         Deteccion();
 
@@ -117,7 +120,7 @@ public class MovimientoJugador : MonoBehaviour
 
     void Deteccion()
     {
-        if(banderaCaminar == true)
+        if (banderaCaminar == true)
         {
             pepeCamina.SetActive(true);
         }
@@ -126,7 +129,7 @@ public class MovimientoJugador : MonoBehaviour
             pepeCamina.SetActive(false);
         }
 
-        if(banderaCorrer == true)
+        if (banderaCorrer == true)
         {
             pepeCorre.SetActive(true);
         }
@@ -134,5 +137,6 @@ public class MovimientoJugador : MonoBehaviour
         {
             pepeCorre.SetActive(false);
         }
+
     }
 }

@@ -23,6 +23,7 @@ public class EscapeJaula : MonoBehaviour
 
     //audio
     [SerializeField] AudioSource sonidoLlaves;
+    [SerializeField] AudioSource sonidoPuerta;
 
     private void Awake()
     {
@@ -35,6 +36,7 @@ public class EscapeJaula : MonoBehaviour
         llaveAgarrar.SetActive(true);
         //llavePuerta.SetActive(false);
         //textoPuerta.SetActive(false);
+       
     }
 
 
@@ -75,6 +77,7 @@ public class EscapeJaula : MonoBehaviour
                             //llavePuerta.SetActive(true);
                             banderaDesactivar = false;
                             //textoPuerta.SetActive(false);
+                            sonidoLlaves.Play();
                         }
                     }
                     else
