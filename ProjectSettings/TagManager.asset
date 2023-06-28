@@ -19,6 +19,15 @@ TagManager:
   - bateriaTres
   - Carta
   - audio
+  - 2d
+  - 2d1
+  - 2d2
+  - 2d3
+  - 2d4
+  - 2d5
+  - 2d6
+  - 2d7
+  - 2d8
   layers:
   - Default
   - TransparentFX

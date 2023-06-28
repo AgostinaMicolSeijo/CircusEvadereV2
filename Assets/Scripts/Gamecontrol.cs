@@ -15,7 +15,7 @@ public class Gamecontrol : MonoBehaviour
         Win = false;
     }
 
-    private void Update()
+    public void Update()
     {  
       if (pictures[0].rotation.z == 0 &&
             pictures[1].rotation.z == 0 &&
@@ -30,6 +30,7 @@ public class Gamecontrol : MonoBehaviour
             Win = true;
           //  Fine.SetActive(true);
           //  Luz.SetActive(true);
+          
         }
 
 
