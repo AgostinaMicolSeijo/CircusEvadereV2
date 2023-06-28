@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
-    public bool pause;
+    public bool pause=false;
     public GameObject pauseMenu;
-    public void Start()
+    public void Awake()
     {
-        
+        pauseMenu.SetActive(false);
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            print(pause);
             pause = !pause;
-            pauseMenu.SetActive(!pause);
+            pauseMenu.SetActive(pause);
         }
 
         if(pauseMenu == true)

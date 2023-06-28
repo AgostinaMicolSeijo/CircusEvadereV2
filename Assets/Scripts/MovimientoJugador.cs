@@ -21,6 +21,9 @@ public class MovimientoJugador : MonoBehaviour
    [SerializeField] GameObject pepeCamina;
    [SerializeField] GameObject pepeCorre;
 
+    bool banderaCaminar= false;
+    bool banderaCorrer= false;
+
     Vector3 rapidez;
 
     bool estamosEnPasto;
@@ -49,13 +52,20 @@ public class MovimientoJugador : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
         //move.Normalize();
-        if(x > 1 || z > 1)
+        if ((x < 0 && x > 0) || (z < 0 && z > 0))
         {
             move.Normalize();
         }
-
+       
         controler.Move(move * velocidad * Time.deltaTime);
-
+        if(x!=0 || z!=0)
+        {
+            banderaCaminar = true;
+        }
+        else
+        {
+            banderaCaminar = false;
+        }
 
 
         if (Input.GetKey(KeyCode.LeftShift) && estaCorriendo == false)
@@ -64,6 +74,7 @@ public class MovimientoJugador : MonoBehaviour
 
             duracion = duracion + Time.deltaTime;
 
+            banderaCorrer = true;
 
             if (duracion >= 4)
             {
@@ -72,10 +83,12 @@ public class MovimientoJugador : MonoBehaviour
 
                 estaCorriendo = true;
                 Clip.Play();
-
             }
         }
-
+        else
+        {
+            banderaCorrer = false;
+        }
 
         if (estaCorriendo == true)
         {
@@ -98,5 +111,28 @@ public class MovimientoJugador : MonoBehaviour
 
         controler.Move(rapidez*Time.deltaTime);
 
+        Deteccion();
+
+    }
+
+    void Deteccion()
+    {
+        if(banderaCaminar == true)
+        {
+            pepeCamina.SetActive(true);
+        }
+        else
+        {
+            pepeCamina.SetActive(false);
+        }
+
+        if(banderaCorrer == true)
+        {
+            pepeCorre.SetActive(true);
+        }
+        else
+        {
+            pepeCorre.SetActive(false);
+        }
     }
 }
