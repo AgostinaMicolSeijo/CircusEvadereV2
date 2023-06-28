@@ -28,6 +28,7 @@ TagManager:
   - 2d6
   - 2d7
   - 2d8
+  - Malo
   layers:
   - Default
   - TransparentFX

@@ -246,6 +246,7 @@ public class Generador : MonoBehaviour
             {
                 banderaBoton = true;
                 luzCirco.SetActive(true);
+                generador.Stop();
             }
             if(hit.transform.CompareTag("boton") && banderaBoton == true)
             {
@@ -411,8 +412,7 @@ public class Generador : MonoBehaviour
         }
         //abrir puertas
         if (contadorRojo >= 3 || contadorAmarillo >= 3 || contadorVerde >= 3)
-        {
-            generador.Stop();
+        {    
             reja.Play();
             puerta.SetActive(false);
             puertaAbrir.SetActive(true);

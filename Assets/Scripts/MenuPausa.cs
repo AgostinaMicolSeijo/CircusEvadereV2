@@ -20,15 +20,14 @@ public class MenuPausa : MonoBehaviour
             pauseMenu.SetActive(pause);
         }
 
-        if(pauseMenu == true)
+        if(pause != false)
         {
             Cursor.lockState = CursorLockMode.None;
         }
-        if(pauseMenu == false)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-
+        if(pause == false)
+        { 
+            Cursor.lockState = CursorLockMode.Locked; 
+        }     
     }
 
     public void VolverMenu()

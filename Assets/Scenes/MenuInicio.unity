@@ -642,7 +642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b656a3e07fa4e847b465134f3c667a9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.20949036
+      value: -0.39251983
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b656a3e07fa4e847b465134f3c667a9, type: 3}
       propertyPath: m_LocalRotation.x
@@ -650,7 +650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b656a3e07fa4e847b465134f3c667a9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.97781074
+      value: 0.9197436
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b656a3e07fa4e847b465134f3c667a9, type: 3}
       propertyPath: m_LocalRotation.z
@@ -662,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b656a3e07fa4e847b465134f3c667a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -155.815
+      value: 226.223
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b656a3e07fa4e847b465134f3c667a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -913,7 +913,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: 'play
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -946,7 +948,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
   m_fontSizeMax: 0
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

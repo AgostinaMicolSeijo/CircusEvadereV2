@@ -212,17 +212,17 @@ public class CajaMusical : MonoBehaviour
 
                 contadorBaterias = 0;
 
-                rejapuertapuzzleUnoAnimada.SetActive(false);
-                rejapuertapuzzleDosAnimada.SetActive(false);
+                rejapuertapuzzleUnoAnimada.SetActive(true);
+                rejapuertapuzzleDosAnimada.SetActive(true);
 
-                rejapuertapuzzleUno.SetActive(true);
-                rejapuertapuzzleDos.SetActive(true);
+                rejapuertapuzzleUno.SetActive(false);
+                rejapuertapuzzleDos.SetActive(false);
 
-                cartelUno.SetActive(true);
-                cartelDos.SetActive(true);
+                cartelUno.SetActive(false);
+                cartelDos.SetActive(false);
 
-                cartelUnoAnimado.SetActive(false);
-                cartelDosAnimado.SetActive(false);
+                cartelUnoAnimado.SetActive(true);
+                cartelDosAnimado.SetActive(true);
 
                 sonidoCajaMusical.Play();
 
