@@ -74,7 +74,7 @@ Material:
     - _Float1: 1
     - _Float2: 160
     - _Float3: 1
-    - __dirty: 0
+    - __dirty: 1
     - _escala: 160
     - _tiling: 250
     m_Colors:

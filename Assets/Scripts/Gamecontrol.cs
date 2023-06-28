@@ -8,11 +8,24 @@ public class Gamecontrol : MonoBehaviour
     private Transform[] pictures;
   //  public GameObject Fine;
     public static bool Win;
-  //  public GameObject Luz;
+    //  public GameObject Luz;
+
+
+    //intervencion de peke:
+    [SerializeField] GameObject cofreCerrado;
+    [SerializeField] GameObject cofreAnimado;
+
+    bool vanderaActivar = false;
+    //fin xd
 
     private void Start()
     {
         Win = false;
+
+        //intervencion de peke
+        cofreCerrado.SetActive(true);
+        cofreAnimado.SetActive(false);
+        // fin xd
     }
 
     public void Update()
@@ -28,13 +41,19 @@ public class Gamecontrol : MonoBehaviour
             pictures[8].rotation.z == 0)
         {
             Win = true;
-          //  Fine.SetActive(true);
-          //  Luz.SetActive(true);
-          
+            //  Fine.SetActive(true);
+            //  Luz.SetActive(true);
+            vanderaActivar = true;
+
         }
 
-
-
+      //intervencion de peke:
+        if(vanderaActivar == true)
+        {
+            cofreCerrado.SetActive(false);
+            cofreAnimado.SetActive(true);
+        }
+      //fin xd
 
     }
 

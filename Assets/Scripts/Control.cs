@@ -6,6 +6,7 @@ public class Control : MonoBehaviour
 {
     [SerializeField] private float camaradistance;
     [SerializeField] private GameObject camara;
+
   
     public void Update()
     {
