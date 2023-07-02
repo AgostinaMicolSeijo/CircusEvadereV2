@@ -14,7 +14,7 @@ public class Gamecontrol : MonoBehaviour
     //intervencion de peke:
     [SerializeField] GameObject cofreCerrado;
     [SerializeField] GameObject cofreAnimado;
-    [SerializeField] GameObject llave;
+    //[SerializeField] GameObject llave;
 
     bool vanderaActivar = false;
     //fin xd
@@ -26,7 +26,7 @@ public class Gamecontrol : MonoBehaviour
         //intervencion de peke
         cofreCerrado.SetActive(true);
         cofreAnimado.SetActive(false);
-        llave.SetActive(false);
+        //llave.SetActive(false);
         // fin xd
     }
 
@@ -54,7 +54,7 @@ public class Gamecontrol : MonoBehaviour
         {
             cofreCerrado.SetActive(false);
             cofreAnimado.SetActive(true);
-            llave.SetActive(true);
+            //llave.SetActive(true);
         }
       //fin xd
 
