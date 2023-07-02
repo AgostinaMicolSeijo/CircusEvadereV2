@@ -32,6 +32,8 @@ TagManager:
   - LlaveFinal
   - RejaFinal
   - CartaJaula
+  - CartaLinterna
+  - CartaTuerca
   layers:
   - Default
   - TransparentFX

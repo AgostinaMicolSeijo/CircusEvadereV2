@@ -8,10 +8,12 @@ public class Cartas : MonoBehaviour
     public float distanciaRayo = 5f;
 
     [SerializeField] GameObject cartaJaula;
+    [SerializeField] GameObject cartaLinterna;
 
     private void Start()
     {
         cartaJaula.SetActive(false);
+        cartaLinterna.SetActive(false);
     }
 
     private void Update()
@@ -27,6 +29,26 @@ public class Cartas : MonoBehaviour
             else
             {
                 cartaJaula.SetActive(false);
+            }
+
+
+            if (hit.transform.CompareTag("CartaLinterna"))
+            {
+                cartaLinterna.SetActive(true);
+            }
+            else
+            {
+                cartaLinterna.SetActive(false);
+            }
+
+
+            if (hit.transform.CompareTag("CartaTuerca"))
+            {
+                cartaLinterna.SetActive(true);
+            }
+            else
+            {
+                cartaLinterna.SetActive(false);
             }
         }
     }
