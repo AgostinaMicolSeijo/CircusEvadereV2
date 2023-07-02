@@ -77,7 +77,7 @@ public class EscapeJaula : MonoBehaviour
                             //llavePuerta.SetActive(true);
                             banderaDesactivar = false;
                             //textoPuerta.SetActive(false);
-                            sonidoLlaves.Play();
+                            sonidoPuerta.Play();
                         }
                     }
                     else
