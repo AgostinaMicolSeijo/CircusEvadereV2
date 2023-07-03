@@ -38,6 +38,9 @@ TagManager:
   - CartaNegrelio
   - CartaCajaMusical
   - CartaEngranajeGenerador
+  - CartaBateria
+  - CartaCartelPuzzle
+  - CartaRejaFinal
   layers:
   - Default
   - TransparentFX

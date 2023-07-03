@@ -14,6 +14,10 @@ public class Cartas : MonoBehaviour
     [SerializeField] GameObject cartaNegrelio;
     [SerializeField] GameObject cartaCajaMusical;
     [SerializeField] GameObject cartaEngranajeGenerador;
+    [SerializeField] GameObject cartaBateria;
+    [SerializeField] GameObject cartaCartelPuzzle;
+    [SerializeField] GameObject cartaRejaFinal;
+
     private void Start()
     {
         cartaJaula.SetActive(false);
@@ -23,6 +27,9 @@ public class Cartas : MonoBehaviour
         cartaNegrelio.SetActive(false);
         cartaCajaMusical.SetActive(false);
         cartaEngranajeGenerador.SetActive(false);
+        cartaBateria.SetActive(false);
+        cartaCartelPuzzle.SetActive(false);
+        cartaRejaFinal.SetActive(false);
     }
 
     private void Update()
@@ -98,6 +105,36 @@ public class Cartas : MonoBehaviour
             else
             {
                 cartaEngranajeGenerador.SetActive(false);
+            }
+
+
+            if (hit.transform.CompareTag("CartaBateria"))
+            {
+                cartaBateria.SetActive(true);
+            }
+            else
+            {
+                cartaBateria.SetActive(false);
+            }
+
+
+            if (hit.transform.CompareTag("CartaCartelPuzzle"))
+            {
+                cartaCartelPuzzle.SetActive(true);
+            }
+            else
+            {
+                cartaCartelPuzzle.SetActive(false);
+            }
+
+
+            if (hit.transform.CompareTag("CartaRejaFinal"))
+            {
+                cartaRejaFinal.SetActive(true);
+            }
+            else
+            {
+                cartaRejaFinal.SetActive(false);
             }
         }
     }
