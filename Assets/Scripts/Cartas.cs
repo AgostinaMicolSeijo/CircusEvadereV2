@@ -9,11 +9,20 @@ public class Cartas : MonoBehaviour
 
     [SerializeField] GameObject cartaJaula;
     [SerializeField] GameObject cartaLinterna;
-
+    [SerializeField] GameObject cartaTuerca;
+    [SerializeField] GameObject cartaGenerador;
+    [SerializeField] GameObject cartaNegrelio;
+    [SerializeField] GameObject cartaCajaMusical;
+    [SerializeField] GameObject cartaEngranajeGenerador;
     private void Start()
     {
         cartaJaula.SetActive(false);
         cartaLinterna.SetActive(false);
+        cartaTuerca.SetActive(false);
+        cartaGenerador.SetActive(false);
+        cartaNegrelio.SetActive(false);
+        cartaCajaMusical.SetActive(false);
+        cartaEngranajeGenerador.SetActive(false);
     }
 
     private void Update()
@@ -44,11 +53,51 @@ public class Cartas : MonoBehaviour
 
             if (hit.transform.CompareTag("CartaTuerca"))
             {
-                cartaLinterna.SetActive(true);
+                cartaTuerca.SetActive(true);
             }
             else
             {
-                cartaLinterna.SetActive(false);
+                cartaTuerca.SetActive(false);
+            }
+
+
+            if (hit.transform.CompareTag("CartaGenerador"))
+            {
+                cartaGenerador.SetActive(true);
+            }
+            else
+            {
+                cartaGenerador.SetActive(false);
+            }
+
+
+            if (hit.transform.CompareTag("CartaNegrelio"))
+            {
+                cartaNegrelio.SetActive(true);
+            }
+            else
+            {
+                cartaNegrelio.SetActive(false);
+            }
+
+
+            if (hit.transform.CompareTag("CartaCajaMusical"))
+            {
+                cartaCajaMusical.SetActive(true);
+            }
+            else
+            {
+                cartaCajaMusical.SetActive(false);
+            }
+            
+
+            if (hit.transform.CompareTag("CartaEngranajeGenerador"))
+            {
+                cartaEngranajeGenerador.SetActive(true);
+            }
+            else
+            {
+                cartaEngranajeGenerador.SetActive(false);
             }
         }
     }
