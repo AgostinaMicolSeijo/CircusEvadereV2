@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuMuerte.unity
     guid: 5ad3353d6a1a17e40ad5fdc401fd9bcf
+  - enabled: 1
+    path: Assets/Scenes/CarpaMaldita.unity
+    guid: 9fcb32a9eda7fef4c9c0c268058e4995
   m_configObjects: {}
