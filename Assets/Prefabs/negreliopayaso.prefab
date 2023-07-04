@@ -807,9 +807,10 @@ GameObject:
   - component: {fileID: 1325751283393224651}
   - component: {fileID: 2785680318555817429}
   - component: {fileID: 3966348113792403509}
+  - component: {fileID: 4608155709716046850}
   m_Layer: 0
   m_Name: negreliopayaso
-  m_TagString: Untagged
+  m_TagString: Malo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -943,6 +944,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7c0d3939d120d42b53aaf374f2c957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &4608155709716046850
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4023100143480173399}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &4023100143480173401
 GameObject:
   m_ObjectHideFlags: 0
