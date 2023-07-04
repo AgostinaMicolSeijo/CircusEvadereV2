@@ -41,6 +41,7 @@ TagManager:
   - CartaBateria
   - CartaCartelPuzzle
   - CartaRejaFinal
+  - FinalWaypoint
   layers:
   - Default
   - TransparentFX
