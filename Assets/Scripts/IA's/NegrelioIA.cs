@@ -29,6 +29,9 @@ public class NegrelioIA : MonoBehaviour
     [SerializeField] private float _velocitynormal;
     [SerializeField] private float _persecucion;
 
+    [SerializeField] private GameObject _destroyedN;
+
+
     private void Awake()
     {
         _rangoactual = _radius;
@@ -101,10 +104,18 @@ public class NegrelioIA : MonoBehaviour
     {
         _waypoints = value;
     }
-    public void SetterReference(Transform target, GameObject bolacorrer, GameObject bolacaminar)
+    public void SetterReference(Transform target, GameObject bolacorrer, GameObject bolacaminar, GameObject destroyN)
     {
         _target = target;
         _runningBall = bolacorrer;
         _bolacaminar = bolacaminar;
+        _destroyedN = destroyN;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "FinalWaypoint")
+        {
+            Destroy(gameObject);
+        }
     }
 }

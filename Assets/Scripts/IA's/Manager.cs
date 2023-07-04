@@ -35,12 +35,13 @@ public class Manager : MonoBehaviour
     [Header("Negrelio")]
     [SerializeField] private Transform[] _waypointsNegrelio;
     [SerializeField] private Transform target;
-
+    [SerializeField] private GameObject _destroyGameObjectN;
 
 
     [Header("Rojelio")]
     [SerializeField] private Transform[] _waypointsRojelio;
     [SerializeField] private GameObject _luz;
+    [SerializeField] private GameObject _destroyGameObjectR;
 
     private void Awake()
     {
@@ -85,19 +86,27 @@ public class Manager : MonoBehaviour
             if (_timer == 0)
             {
                 var negrliospawn = Instantiate(_prefabN, _spawnN.transform.position, _spawnN.transform.rotation);
-                negrliospawn.GetComponent<NegrelioIA>().enabled= true;
-                negrliospawn.GetComponent<NegrelioIA>().SetterReference(target, _bolacorrer, _bolacaminar);
+                negrliospawn.GetComponent<NegrelioIA>().enabled = true;
+                negrliospawn.GetComponent<NegrelioIA>().SetterReference(target, _bolacorrer, _bolacaminar, _destroyGameObjectN);
                 negrliospawn.GetComponent<NegrelioIA>().SetterWaypoints(_waypointsNegrelio);
                 negrliospawn.GetComponent<NegrelioIA>().SetterPosition();
-                
+
                 var rojspawn = Instantiate(_prefabR, _spawnR.transform.position, _spawnR.transform.rotation);
                 rojspawn.GetComponent<RojelioIA>().enabled = true;
                 rojspawn.GetComponent<RojelioIA>().SetterWaypoints(_waypointsRojelio);
                 rojspawn.GetComponent<RojelioIA>().SetterPosition();
-                rojspawn.GetComponent<RojelioIA>().SetterReference(_targetPepito, _luz );
+                rojspawn.GetComponent<RojelioIA>().SetterReference(_targetPepito, _luz, _destroyGameObjectR);
 
             }
             _timer += Time.deltaTime;
+        }
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "FinalWaypoint")
+        {
+            Destroy(gameObject);
         }
     }
 

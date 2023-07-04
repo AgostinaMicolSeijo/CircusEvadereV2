@@ -23,6 +23,7 @@ public class RojelioIA : MonoBehaviour
     Vector3 _nextWaypoint;
     [SerializeField] float _offset;
     [SerializeField] int _arraynumber = 0;
+    [SerializeField] private GameObject _destroyed;
 
     /* se asigna que el rango actual sea igual al "radius" al cual se le asigna desde el inspector
       para por modificarlo en tiempo real  */
@@ -121,9 +122,17 @@ public class RojelioIA : MonoBehaviour
     {
         _waypoints = value;
     }
-    public void SetterReference(Transform _target,GameObject _luz)
+    public void SetterReference(Transform _target, GameObject _luz, GameObject _destroyR)
     {
         target = _target;
         luz = _luz;
+        _destroyed = _destroyR;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "FinalWaypoint")
+        {
+            Destroy(gameObject);
+        }
     }
 }
