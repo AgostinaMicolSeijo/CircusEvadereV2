@@ -31,10 +31,11 @@ public class Manager : MonoBehaviour
     Vector3 _nextWaypoint;
 
     //timer
-    [SerializeField] private float _timer = 0;
+    [SerializeField] private float _timer;
 
     private void Awake()
     {
+        _timer = 0;
         _nextWaypoint = _waypoints[0].position;
         _agent.speed = 3;
     }
@@ -68,7 +69,6 @@ public class Manager : MonoBehaviour
         if (Vector3.Distance(transform.position, _targetPepito.position) <= _rangoVision)
         {
             
-            _timer += Time.deltaTime;
             if (_timer >= 7)
             {
                 _timer = 0;
@@ -76,8 +76,9 @@ public class Manager : MonoBehaviour
             if (_timer == 0)
             {
               Instantiate(_prefabN, _spawnN.transform.position, _spawnN.transform.rotation);
-
+                Instantiate(_prefabR, _spawnR.transform.position, _spawnR.transform.rotation);
             }
+            _timer += Time.deltaTime;
         }
     }
 
