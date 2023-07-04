@@ -32,6 +32,15 @@ public class Manager : MonoBehaviour
 
     //timer
     [SerializeField] private float _timer;
+    [Header("Negrelio")]
+    [SerializeField] private Transform[] _waypointsNegrelio;
+    [SerializeField] private Transform target;
+
+
+
+    [Header("Rojelio")]
+    [SerializeField] private Transform[] _waypointsRojelio;
+    [SerializeField] private GameObject _luz;
 
     private void Awake()
     {
@@ -68,15 +77,25 @@ public class Manager : MonoBehaviour
 
         if (Vector3.Distance(transform.position, _targetPepito.position) <= _rangoVision)
         {
-            
+
             if (_timer >= 7)
             {
                 _timer = 0;
             }
             if (_timer == 0)
             {
-              Instantiate(_prefabN, _spawnN.transform.position, _spawnN.transform.rotation);
-                Instantiate(_prefabR, _spawnR.transform.position, _spawnR.transform.rotation);
+                var negrliospawn = Instantiate(_prefabN, _spawnN.transform.position, _spawnN.transform.rotation);
+                negrliospawn.GetComponent<NegrelioIA>().enabled= true;
+                negrliospawn.GetComponent<NegrelioIA>().SetterReference(target, _bolacorrer, _bolacaminar);
+                negrliospawn.GetComponent<NegrelioIA>().SetterWaypoints(_waypointsNegrelio);
+                negrliospawn.GetComponent<NegrelioIA>().SetterPosition();
+                
+                var rojspawn = Instantiate(_prefabR, _spawnR.transform.position, _spawnR.transform.rotation);
+                rojspawn.GetComponent<RojelioIA>().enabled = true;
+                rojspawn.GetComponent<RojelioIA>().SetterWaypoints(_waypointsRojelio);
+                rojspawn.GetComponent<RojelioIA>().SetterPosition();
+                rojspawn.GetComponent<RojelioIA>().SetterReference(_targetPepito, _luz );
+
             }
             _timer += Time.deltaTime;
         }
@@ -103,5 +122,7 @@ public class Manager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         _rangoVision = _rangoVisionOriginal;
     }
-   
+
+
+
 }

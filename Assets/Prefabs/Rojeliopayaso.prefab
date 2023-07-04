@@ -93,14 +93,7 @@ MonoBehaviour:
   rangolinterna: 5
   velocidadnormal: 1
   velocidadmaxima: 1.7
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _waypoints: []
   _offset: 1
   _arraynumber: 0
 --- !u!195 &7036534905553766496

@@ -29,12 +29,24 @@ public class RojelioIA : MonoBehaviour
     private void Awake()
     {
         rangoactual = radius;
-        _nextWaypoint = _waypoints[0].position;
-        
+        if (_waypoints.Length > 0)
+        {
+            SetterPosition();
+        }
+
     }
-    
+    public void SetterPosition()
+    {
+        _nextWaypoint = _waypoints[0].position;
+
+    }
+
     void Update()
     {
+        if (!luz)
+        {
+            return;
+        }
         /* si la distancia entre el enemigo y el player es menor al rango actual 
          se persigue mediante el navmesh. En caso de estar al borde del rango el navmesh aumenta su 
          velocidad, de lo contrario vuelve a su velocidad normal*/
@@ -102,7 +114,16 @@ public class RojelioIA : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(enemy.position, rangoactual);
-       // Gizmos.color = Color.green;
-       // Gizmos.DrawSphere(escondite.position, rangoescondite);
+        // Gizmos.color = Color.green;
+        // Gizmos.DrawSphere(escondite.position, rangoescondite);
+    }
+    public void SetterWaypoints(Transform[] value)
+    {
+        _waypoints = value;
+    }
+    public void SetterReference(Transform _target,GameObject _luz)
+    {
+        target = _target;
+        luz = _luz;
     }
 }

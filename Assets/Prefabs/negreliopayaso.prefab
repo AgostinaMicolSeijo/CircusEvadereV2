@@ -921,19 +921,12 @@ MonoBehaviour:
   _agent: {fileID: 1325751283393224651}
   _rangoactual: 0
   _radius: 3.5
-  _bolacorrer: {fileID: 0}
+  _runningBall: {fileID: 0}
   _bolacaminar: {fileID: 0}
   _radioescuchar: 8
   _radiusCerca: 1
   _radiusCorrer: 6
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _waypoints: []
   _offset: 1
   _arraynumber: 0
   _velocitynormal: 1

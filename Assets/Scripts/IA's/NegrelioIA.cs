@@ -13,7 +13,7 @@ public class NegrelioIA : MonoBehaviour
     //rangos
     [SerializeField] private float _rangoactual;
     [SerializeField] private float _radius;
-    [SerializeField] private GameObject _bolacorrer;
+    [SerializeField] private GameObject _runningBall;
     [SerializeField] private GameObject _bolacaminar;
     [SerializeField] private float _radioescuchar;
     [SerializeField] private float _radiusCerca;
@@ -32,12 +32,25 @@ public class NegrelioIA : MonoBehaviour
     private void Awake()
     {
         _rangoactual = _radius;
+        if (_waypoints.Length > 0)
+        {
+            SetterPosition();
+        }
+    }
+    public void SetterPosition()
+    {
         _nextWaypoint = _waypoints[0].position;
+
     }
 
     void Update()
     {
-        if ((_bolacorrer.activeInHierarchy) && Vector3.Distance(transform.position, _target.position) <= _radioescuchar)
+        if (!_runningBall)
+        {
+            return;
+        }
+        
+        if ((_runningBall.activeInHierarchy) && Vector3.Distance(transform.position, _target.position) <= _radioescuchar)
         {
             _rangoactual = _radiusCorrer;
             _agent.speed = _persecucion;
@@ -50,7 +63,7 @@ public class NegrelioIA : MonoBehaviour
         }
 
         if (Vector3.Distance(transform.position, _target.position) <= _rangoactual &&
-            ( _bolacorrer.activeInHierarchy || _bolacaminar.activeInHierarchy) 
+            (_runningBall.activeInHierarchy || _bolacaminar.activeInHierarchy) 
             || Vector3.Distance(transform.position, _target.position) <= _radiusCerca)
         {        
               _agent.SetDestination(_target.position);
@@ -83,5 +96,15 @@ public class NegrelioIA : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, _radiusCorrer);
 
+    }
+    public void SetterWaypoints(Transform[] value)
+    {
+        _waypoints = value;
+    }
+    public void SetterReference(Transform target, GameObject bolacorrer, GameObject bolacaminar)
+    {
+        _target = target;
+        _runningBall = bolacorrer;
+        _bolacaminar = bolacaminar;
     }
 }
