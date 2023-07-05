@@ -42,6 +42,7 @@ public class MenuPausa : MonoBehaviour
     public void Return()
     {
         pauseMenu.SetActive(false);
+        pause = !pause;
     }
     
 }
