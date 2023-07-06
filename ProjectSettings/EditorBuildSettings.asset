@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/CarabanasMalditas.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/MenuMuerte.unity
+    path: Assets/Scenes/MenuMuerte1.unity
     guid: 5ad3353d6a1a17e40ad5fdc401fd9bcf
   - enabled: 1
     path: Assets/Scenes/CarpaMaldita.unity
     guid: 9fcb32a9eda7fef4c9c0c268058e4995
+  - enabled: 1
+    path: Assets/Scenes/MenuMuerte.unity
+    guid: 00f0a4d593f69e74485be61dc24ec596
+  - enabled: 1
+    path: Assets/Scenes/EscenaFinal.unity
+    guid: 219bd662454ff1d459d8b7903b62214f
   m_configObjects: {}

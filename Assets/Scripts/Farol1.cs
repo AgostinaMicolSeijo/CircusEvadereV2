@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Farol1 : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject luzFarol;
+    bool banderaFarol;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            luzFarol.SetActive(banderaFarol);
+            banderaFarol = !banderaFarol;
+        }
     }
 }

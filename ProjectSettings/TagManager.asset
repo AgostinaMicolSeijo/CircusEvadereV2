@@ -43,6 +43,9 @@ TagManager:
   - CartaRejaFinal
   - FinalWaypoint
   - cambio
+  - pino
+  - LlaveCarpa
+  - UltimaReja
   layers:
   - Default
   - TransparentFX

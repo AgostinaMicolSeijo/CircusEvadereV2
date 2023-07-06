@@ -461,8 +461,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1199696390}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+      - m_Target: {fileID: 1199696395}
+        m_TargetAssemblyTypeName: MuerteMenu, Assembly-CSharp
         m_MethodName: Salir
         m_Mode: 1
         m_Arguments:
@@ -1002,7 +1002,6 @@ GameObject:
   - component: {fileID: 1199696393}
   - component: {fileID: 1199696392}
   - component: {fileID: 1199696391}
-  - component: {fileID: 1199696390}
   - component: {fileID: 1199696395}
   m_Layer: 5
   m_Name: Canvas
@@ -1011,18 +1010,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1199696390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199696389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16cfdbc4eecbe324d853a3f2129852a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1199696391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,7 +1102,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1199696389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16cfdbc4eecbe324d853a3f2129852a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 710889d43e6cfbf4ea389a6e0fec1269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1201228372 stripped
@@ -1775,9 +1762,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1199696390}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: Jugar
+      - m_Target: {fileID: 1199696395}
+        m_TargetAssemblyTypeName: MuerteMenu, Assembly-CSharp
+        m_MethodName: MuerteNivel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

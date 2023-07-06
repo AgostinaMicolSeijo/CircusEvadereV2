@@ -20,4 +20,6 @@ public class Menu : MonoBehaviour
         Application.Quit();
         print("Salir");
     }
+
+
 }

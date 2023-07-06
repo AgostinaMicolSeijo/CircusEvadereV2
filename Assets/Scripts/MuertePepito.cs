@@ -37,7 +37,7 @@ public class MuertePepito : MonoBehaviour
             if (contador >= 1.5f)
             {
                 //Cambio a escena y fin de muerte
-                SceneManager.LoadScene("MenuMuerte");
+                SceneManager.LoadScene("MenuMuerte1");
                 contador = 0f;
                 vanderaMuerte = false;
             }
