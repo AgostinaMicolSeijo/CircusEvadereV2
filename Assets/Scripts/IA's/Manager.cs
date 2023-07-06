@@ -56,14 +56,23 @@ public class Manager : MonoBehaviour
         {
             transform.LookAt(_targetPepito);
             _rangoVision = _rangoVisionAumentado;
-
+            
         }
         else
         {
+            
             StartCoroutine("Tiempo_Vision");
             print("se activo corutina");
         }
-        _agent.SetDestination(_nextWaypoint);
+        if (Vector3.Distance(transform.position, _targetPepito.position) <= _rangoVision)
+        {
+            _agent.SetDestination(_targetPepito.position);
+            transform.LookAt(_targetPepito);
+        }
+        else
+        {
+            _agent.SetDestination(_nextWaypoint);
+        }
         if (Vector3.Distance(transform.position, _nextWaypoint) <= _offset)
         {
 
