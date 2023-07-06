@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class CinematicController : MonoBehaviour
 {
     [SerializeField] float textSpeed;
-    [SerializeField] float contador = 0f;
-
+    float contador = 0f;
+    [SerializeField] float maxTimer;
 
     void Start()
     {
@@ -21,9 +21,9 @@ public class CinematicController : MonoBehaviour
 
         contador = contador + Time.deltaTime;
 
-        if(contador>=10)
+        if(contador>= maxTimer)
         {
-            SceneManager.LoadScene("CarabanaMaldita");
+            SceneManager.LoadScene("CarabanasMalditas");
             contador = 0;
         }
     }
