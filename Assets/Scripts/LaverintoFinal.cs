@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LaverintoFinal : MonoBehaviour
 {
@@ -15,10 +16,17 @@ public class LaverintoFinal : MonoBehaviour
 
     bool activador = false;
 
+    [SerializeField] GameObject pepito;
+    [SerializeField] GameObject pepitoCamara;
+
+
+
     void Start()
     {
         rejaAnimada.SetActive(false);
         reja.SetActive(true);
+
+        pepitoCamara.SetActive(false);
     }
 
     void Update()
@@ -52,9 +60,12 @@ public class LaverintoFinal : MonoBehaviour
                         llaveMano.SetActive(false);
                         reja.SetActive(false);
                         rejaAnimada.SetActive(true);
+                        pepito.SetActive(false);
+                        pepitoCamara.SetActive(true);                     
                     }
                 }
             }
         }
+
     }
 }

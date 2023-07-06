@@ -18,20 +18,13 @@ public class MuertePepito : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
+       // Debug.Log(collision.gameObject.name);
         if (collision.gameObject.tag == "Malo")
         {
             print("Muerto");
             vanderaMuerte = true;
             fadeOut.SetActive(true);
         }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        //print("collision");
-        //Activar el fade out al morir (poco notorio pero existe)
-        
-
     }
 
     private void Update()
@@ -41,7 +34,7 @@ public class MuertePepito : MonoBehaviour
         {
             contador = contador + Time.deltaTime * 2;
             print(contador);
-            if (contador >= 1f)
+            if (contador >= 1.5f)
             {
                 //Cambio a escena y fin de muerte
                 SceneManager.LoadScene("MenuMuerte");

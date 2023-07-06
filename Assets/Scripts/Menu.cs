@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] GameObject cinematicText;
     private void Update()
     {
-
+        Cursor.lockState = CursorLockMode.None;
     }
     public void Jugar()
     {
-        SceneManager.LoadScene("CarabanasMalditas");
+        cinematicText.SetActive(true);
     }
 
     public void Salir()
