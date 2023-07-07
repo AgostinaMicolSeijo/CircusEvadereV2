@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 330685032}
   - component: {fileID: 330685031}
   - component: {fileID: 330685033}
+  - component: {fileID: 330685034}
   m_Layer: 5
   m_Name: TextoCinematica
   m_TagString: Untagged
@@ -336,7 +337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -264}
+  m_AnchoredPosition: {x: 312, y: -207}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330685031
@@ -359,27 +360,46 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 's
+  m_text: 'After the Chernobyl nuclear accident, thousands of children began to be
+    born with malformations and different rarities.
 
-    s
-
-    s
-
-    s
+    
 
 
-    s
-
-    s
-
-    s
-
-    s
-
-    s
 
 
-    s'
+
+    This caught
+    the attention of the whole world, which led circuses to abandon animals and use
+    children.
+
+    
+
+
+
+
+
+
+    rarity shows is what the world was looking for, to
+    see malformed children.
+
+    
+
+
+
+
+
+    And you... unfortunately... you''re
+    one of those weirdos.
+
+    
+
+
+
+
+
+    At just 9 years old you have lived your
+    whole life locked in a cage to feed others, now it''s your turn to escape...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -390,11 +410,11 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.16981131, g: 0.018422928, b: 0.018422928, a: 1}
+    topRight: {r: 0.16862746, g: 0.019607844, b: 0.019607844, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
@@ -442,7 +462,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -488.36365, y: -363.27563, z: 98.50927, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -468,8 +488,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff192256f7a88441a663a947aa3fc24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSpeed: 100
-  maxTimer: 0
+  textSpeed: 70
+  maxTimer: 20
+--- !u!95 &330685034
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330685029}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 649cb9546672182489e675a791beabe8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &367888825
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1299,7 +1339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1268780259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1319,7 +1359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -965}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1302630373
@@ -1917,7 +1957,7 @@ RectTransform:
   m_GameObject: {fileID: 1748793198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.234, y: 11.234, z: 11.234}
+  m_LocalScale: {x: 11.234, y: 117.65896, z: 11.234}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1268780259}
