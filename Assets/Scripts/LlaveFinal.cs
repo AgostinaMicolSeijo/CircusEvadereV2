@@ -20,6 +20,7 @@ public class LlaveFinal : MonoBehaviour
     bool activador = false;
 
     float contador = 0f;
+    float contador2 = 0f;
 
     [SerializeField] GameObject fadeOut;
 
@@ -70,16 +71,21 @@ public class LlaveFinal : MonoBehaviour
                         rejaPuertaDerAnim.SetActive(true);
 
                         fadeOut.SetActive(true);
-                        contador = contador + Time.deltaTime * 2;
-
-                        if (contador >= 2f)
-                        {
-                            //Cambio a escena y fin de muerte
-                            SceneManager.LoadScene("EscenaFinal");
-                            contador = 0f;
-
-                        }
+                        contador2++;
+                        
                     }
+                }
+            }
+            if(contador2 >= 0.1)
+            {
+                contador = contador + Time.deltaTime * 2;
+
+                if (contador >= 2f)
+                {
+                    //Cambio a escena y fin de muerte
+                    SceneManager.LoadScene("EscenaFinal");
+                    contador = 0f;
+
                 }
             }
         }

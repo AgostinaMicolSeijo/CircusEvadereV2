@@ -19,7 +19,7 @@ public class SegundaMuertePepito : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.tag == "Malo2")
+        if (collision.gameObject.tag == "Malo")
         {
             print("Muerto");
             vanderaMuerte = true;

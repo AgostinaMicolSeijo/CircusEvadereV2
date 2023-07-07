@@ -46,6 +46,7 @@ TagManager:
   - pino
   - LlaveCarpa
   - UltimaReja
+  - UltimaCarta
   layers:
   - Default
   - TransparentFX
@@ -59,7 +60,7 @@ TagManager:
   - 
   - GroundMask
   - AgarrarFarol
-  - 
+  - UltimaCarta
   - 
   - 
   - 
