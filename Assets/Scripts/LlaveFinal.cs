@@ -24,6 +24,9 @@ public class LlaveFinal : MonoBehaviour
 
     [SerializeField] GameObject fadeOut;
 
+    [SerializeField] AudioSource sonidoLlaves;
+    [SerializeField] AudioSource sonidoPuerta;
+
     void Start()
     {
         llaveAgarrar.SetActive(true);
@@ -31,6 +34,8 @@ public class LlaveFinal : MonoBehaviour
 
         rejaPuertaIzqAnim.SetActive(false);
         rejaPuertaDerAnim.SetActive(false);
+
+        sonidoPuerta.Stop();
     }
 
 
@@ -47,6 +52,7 @@ public class LlaveFinal : MonoBehaviour
                     llaveAgarrar.SetActive(false);
                     llaveMano.SetActive(true);
                     activador = true;
+                    sonidoLlaves.Play();
                 }
             }
 
@@ -69,7 +75,7 @@ public class LlaveFinal : MonoBehaviour
 
                         rejaPuertaIzqAnim.SetActive(true);
                         rejaPuertaDerAnim.SetActive(true);
-
+                        sonidoPuerta.Play();
                         fadeOut.SetActive(true);
                         contador2++;
                         
