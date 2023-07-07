@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MuerteMenu : MonoBehaviour
 {
+    public void Update()
+    {
+        Cursor.lockState = CursorLockMode.None;
+    }
     public void Salir()
     {
         Application.Quit();
